@@ -7,50 +7,37 @@ for _ in range(10):
     ladder_list = []
     for i in range(100):
         ladder_list.append(list(map(int, input().split())))
-    # print(ladder_list)
-    # print(len(ladder_list))
-    # print(ladder_list[99][99])
 
     # 좌표는 ladder_list[x][y] 형식
-    # 도착점 X의 좌표 = ladder_list[99][99]
-    # 도착점 X에서 시작할 것이므로 초기 값 x, y를 99로 설정
+    # 100번째 행에서 도착점의 y좌표를 찾는다
+    for i in range(100):
+        if ladder_list[99][i] == 2:
+            find_2 = i
+            break
+    
+    # 시작점 설정
     x = 99
-    y = 99
-    # print(ladder_list[x][y-1])
-    # print(ladder_list[x-4][y-1])
-    # while x != 0: # x가 0이 되면 시작점을 찾으므로 종료
-    #     if 0 <= y-1 < 100 and ladder_list[x][y-1] == 1:
-    #         y -= 1
-    #     elif 0 <= y+1 < 100 and ladder_list[x][y+1] == 1:
-    #         y += 1
-    #     elif y-1 < 0 or y-1 >= 100:
-    #         pass
-    #     elif y+1 < 0 or y+1 >= 100:
-    #         pass
-    #     else:
-    #         x -= 1
+    y = find_2
+
+    while x != 0:
+        if 0 <= y - 1 < 100 and ladder_list[x][y - 1] == 1:  # 왼쪽 노드가 1이면
+            ladder_list[x][y] = 0  # 0으로 바꿔줌
+            y -= 1  # 왼쪽으로 이동
+
+        elif 0 <= y + 1 < 100 and ladder_list[x][y + 1] == 1:  # 오른쪽 노드가 1이면
+            ladder_list[x][y] = 0  # 0으로 바꿔줌
+            y += 1  # 오른쪽으로 이동
+
+        else:  # 양 옆에 1이 없으면 위로 올라간다.
+            ladder_list[x][y] = 0
+            x -= 1
+
+    print(f'#{T} {y}')
 
 
-    # print(123)
-    # while x != 0:
-    #     if 0 <= y-1 < 100 and ladder_list[x][y-1] == 1:
-    #         y -= 1
-    #     elif 0 <= y+1 < 100 and ladder_list[x][y+1] == 1:
-    #         y += 1
-    #     elif y-1 < 0:
-    #         ladder_list[x][y] = 0
-    #         x -= 1
-    #     elif y+1 >= 100:
-    #         ladder_list[x][y] = 0
-    #         x -= 1
-    #     else: # 양 옆에 1이 없으면 위로 올라간다.
-    #         ladder_list[x][y] = 0
-    #         # print(ladder_list[x][y])
-    #         x -= 1
-    #         # ladder_list[x+1][y] = 0 # 다시 못돌아가게 0으로 바꿔버리기
-    #     # print(ladder_list[x][y])
 
-    # print(f'#{T} {y}')
+
+
 
 
 
