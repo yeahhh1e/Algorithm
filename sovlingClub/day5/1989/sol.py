@@ -18,3 +18,9 @@ for test_case in range(1, T + 1):
         result = 0
 
     print(f'#{test_case} {result}')
+
+
+    '''
+    for i : 0 -> N // 2 - 1
+        if s[i]
+    '''

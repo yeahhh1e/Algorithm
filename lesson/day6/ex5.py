@@ -3,12 +3,12 @@ target = "Hello SSAFY 12th!" # target 패턴을 찾을 대상
 pattern = "SSA" # 우리가 찾을 패턴
 
 def BruteForce(pat, text):
-    N = len(text)
-    M = len(pat)
+    N = len(text) # 타겟의 길이
+    M = len(pat) # 패턴의 길이
     i = 0 # text의 인덱스
     j = 0 # 패턴의 인덱스
 
-    while j < M and i < N:
+    while j < M and i < N:  # 길이보다 인덱스가 작을 때
 
         # 틀린 곳을 발견했다면, index 값을 초기화 시킴.
         if text[i] != pat[j]:
