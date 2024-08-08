@@ -36,7 +36,7 @@ def DFS(s, V):
         # 현재 조사할 노드
         current = stack.pop()
 
-        # 방문하지 않은 노드라면
+        # 방문하지 않은 노드라면     # 방문했다면 그냥 pop하고 끝남 -> 스택이 비게 되고 while문 종료
         if visited[current] == 0:
             # 방문 표시
             visited[current] = 1
