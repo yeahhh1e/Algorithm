@@ -33,20 +33,23 @@ for tc in range(1, T+1):
 
 
     def win(left, right):
-        if left - right == 1:
+        lft = card_list[left-1] # 인덱스 0번은 i번째, 인덱스 j-1번은 j번째 사람임
+        rht = card_list[right-1] # 따라서 left, right는 순번이므로 인덱스로 취급하기 위해 1을 빼줌
+        if lft - rht == 1:
             return left
-        elif left - right == -1:
+        elif lft - rht == -1:
             return right
-        elif left - right == -2:  # x가 가위고 y가 보인 경우
+        elif lft - rht == -2:  # x가 가위고 y가 보인 경우
             return left
-        elif left - right == 2:  # x가 보이고, y가 가위인 경우
+        elif lft - rht == 2:  # x가 보고, y가 가위인 경우
             return right
-        elif left - right == 0:  # 비기는 경우
+        elif lft - rht == 0:  # 비기는 경우
             return left
 
     N = int(input())
     card_list = list(map(int, input().split()))
-    i = 1
-    j = N-1
-    print(f(i, j))
+    # print(card_list)
+    i = 1   # 첫번째 사람
+    j = N   # N번째 사람
+    print(f'#{tc} {f(i, j)}')
 
