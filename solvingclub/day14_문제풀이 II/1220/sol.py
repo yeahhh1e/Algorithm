@@ -23,5 +23,8 @@ for tc in range(1, 11):
                 cnt += 1
                 for n in range(x+2):    # 더해준 후 0으로 바꿔줌
                     stack[n] = 0
-
+                    
+        # 방법 2
+        for x in range(len(stack)-1, -1, -1):
+            
     print(f"#{tc} {cnt}")
