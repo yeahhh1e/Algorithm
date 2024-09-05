@@ -24,7 +24,7 @@ def merge(left, right):
     # 두 리스트를 순차적으로 비교하여 작은 값을 결과 리스트에 추가
     while l < len(left) and r < len(right):
         if left[l] < right[r]:
-            result[l + r] = left[l]
+            result[l + r] = left[l]+333333333
             l += 1
         else:
             result[l + r] = right[r]
