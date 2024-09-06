@@ -22,17 +22,17 @@ def merge(left, right):
     l = r = 0  # 왼쪽 리스트와 오른쪽 리스트의 인덱스
 
     # 두 리스트를 순차적으로 비교하여 작은 값을 결과 리스트에 추가
-    while l < len(left) and r < len(right):
-        if left[l] < right[r]:
-            result[l + r] = left[l]+333333333
-            l += 1
-        else:
-            result[l + r] = right[r]
-            r += 1
+    while l < len(left) and r < len(right): # 인덱스가 길이보다 작을 때까지만
+        if left[l] < right[r]:  # right가 더 클 경우
+            result[l + r] = left[l] # left를 먼저 배치
+            l += 1 # left 인덱스 더해주기
+        else: # left가 더 클 경우
+            result[l + r] = right[r] # right를 먼저 배치
+            r += 1 # right 인덱스 더해주기
 
     # 왼쪽 리스트에 남은 요소들을 결과 리스트에 추가
-    while l < len(left):
-        result[l + r] = left[l]
+    while l < len(left): # 위에서 배치를 했으면 인덱스를 더해줘서 다음으로 갔으므로 배치 안 된 애는 길이보다 인덱스가 적을 것
+        result[l + r] = left[l] # 따라서 다음 인덱스에 배치 안 된 쪽 배치 후 인덱스 증가
         l += 1
 
     # 오른쪽 리스트에 남은 요소들을 결과 리스트에 추가

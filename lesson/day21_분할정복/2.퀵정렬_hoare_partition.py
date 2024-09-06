@@ -8,17 +8,17 @@ arr = [3, 2, 4, 6, 9, 1, 8, 7, 5]
 # 이미 정렬된 배열이나 역순으로 정렬된 배열에서 최악의 성능을 보일 수 있음
 def hoare_partition1(left, right):
     pivot = arr[left]  # 피벗을 제일 왼쪽 요소로 설정
-    i = left + 1
+    i = left + 1 # 피벗 다음 요소부터 보기
     j = right
 
     while i <= j:
-        while i <= j and arr[i] <= pivot:
+        while i <= j and arr[i] <= pivot: # 피벗보다 작을때까지 i 이동
             i += 1
 
-        while i <= j and arr[j] >= pivot:
+        while i <= j and arr[j] >= pivot: # 피벗보다 클때까지 j 이동
             j -= 1
 
-        if i < j:
+        if i < j: # i가 피벗보다 큰 수, j가 피벗보다 작은 수에서 멈춘 상태일 때 둘의 자리를 바꿔 줌
             arr[i], arr[j] = arr[j], arr[i]
 
     arr[left], arr[j] = arr[j], arr[left]
