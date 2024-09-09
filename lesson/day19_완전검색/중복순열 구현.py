@@ -1,12 +1,14 @@
 path = []
-def func(x):
-    if x == 3:
+arr = ['O', 'X']
+
+def run(lev):
+    if lev == 3:
         print(path)
         return
 
-    for i in range(1, 7):
-        path.append(i)
-        func(x + 1)
+    for i in range(2):
+        path.append(arr[i])
+        run(lev + 1)
         path.pop()
 
-func(0)
+run(0)

@@ -33,3 +33,6 @@ for tc in range(1, T + 1):
 
     dfs(0)
     print(f'#{tc} {cnt}')
+    
+    # 이차원에서는 visited[row][col] = 1 : row행의 col 자리에 배치했다고 표현
+    # => 1차원에서 visited[row] = col 로 표현 가능 
