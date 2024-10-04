@@ -43,7 +43,7 @@ def union_lst(s1, s2):
         for j in range(len(s2)):
             if s1[i] == s2[j]:
                 inter_list.append(s1[i])
-    s[i] 
+    s[i]
 
 def solution(str1, str2):
     answer = jaccard(str1, str2)
