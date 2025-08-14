@@ -7,6 +7,6 @@ for _ in range(T):
 
     for coin in coins:
         result.append(C // coin)
-        C = C % coin
+        C %= coin
         
     print(*result)
