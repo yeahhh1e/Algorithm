@@ -6,7 +6,7 @@ T = int(input())
 for test_case in range(1, T + 1):
     string = input()
 
-    # 빈 문자열 만들기
+    # 빈 string 만들기
     reverse_str = ""
     for j in string:
         # 거꾸로 저장
