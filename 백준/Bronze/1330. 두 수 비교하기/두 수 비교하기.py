@@ -1,11 +1,8 @@
-li = list(input().split())
+a, b = map(int, input().split())
 
-li[0] = int(li[0])
-li[1] = int(li[1])
-
-if li[0] > li[1]:
+if a > b:
     print('>')
-elif li[0] < li[1]:
+elif a < b:
     print('<')
 else:
     print('==')
